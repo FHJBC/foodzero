@@ -1,0 +1,47 @@
+.header {
+    height: 90vh;
+    color: white;
+    position: relative;
+}
+
+/* .bgImgHeader {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+} */
+
+.headline {
+    margin-left: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* width: 100%; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+
+.headline__title {
+    font-size: 3.5rem;
+}
+
+hr {
+    border: 1px dotted white;
+}
+
+.opentime {
+    position: absolute;
+    right: 100px;
+    bottom: 100px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.opentime__workdays, .opentime__hours {
+    display: flex;
+    justify-content: space-between;
+}

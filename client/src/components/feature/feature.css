@@ -1,0 +1,40 @@
+.features {
+    margin: 0px 100px;
+    padding: 100px 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.feature__img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #EBF0E4;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature__img > img {
+    width: 70px;
+    height: 70px;
+}
+
+.feature__title {
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+.feature__description {
+    text-align: center;
+}
