@@ -38,3 +38,6 @@
 9. Finally, you will get your database url like the one below:
 <!-- mongodb+srv://<your username on cloud.mongodb.com>:<your password>@cluster0.wmjwv.mongodb.net/?retryWrites=true&w=majority -->
 10. Copy this URL and paste it as the value of **dbUri** property inside the *api/config/default.ts* file 
+11. Still on https://cloud.mongodb.com, under the **SECURITY** section, click on **Network Access** and put **0.0.0.0** in the **IP Address**
+
+Make sure that you have the *nodemon* package installed 
