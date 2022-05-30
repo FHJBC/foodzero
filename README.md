@@ -1,8 +1,8 @@
 1. Cloner le projet
 ```bash
-    git clone url
+    git clone https://github.com/FHJBC/foodzero.git
 ```
-1. Installer les dépendances
+2. Installer les dépendances
 ```bash
     cd foodzero
     cd api
@@ -22,3 +22,6 @@
     npm install
     npm run dev
 ```
+
+### Pour la config de l'url de la base de données
+1. Créer un nouveau compte sur: [MongoDB Atlas](https://cloud.mongodb.com)
