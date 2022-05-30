@@ -6,11 +6,11 @@
     height: 100vh;
 }
 
-form {
-    /* background-color: white; */
+/* form {
+    background-color: white;
     padding: 0px 60px;
     border-radius: 10px;
-}
+} */
 
 .register__title {
     color: rgb(77, 1, 77);
