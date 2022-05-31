@@ -8,7 +8,7 @@ import useFetch from "../../hooks/useFetch";
 import axios from "axios";
 
 const NewHotel = () => {
-  const [files, setFiles] = useState("");
+  const [files, setFiles] = useState<any>("");
   const [info, setInfo] = useState({});
   const [menus, setMenus] = useState([]);
 
@@ -32,7 +32,7 @@ const NewHotel = () => {
     e.preventDefault()
     try {
       const list = await Promise.all(
-        Object.values(files).map(async (file) => {
+        Object.values(files).map(async (file: any) => {
           const data = new FormData();
           data.append("file", file);
           data.append("upload_preset", "upload")

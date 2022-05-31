@@ -1,4 +1,11 @@
-export const userColumns = [
+export interface IColumn {
+  field: string,
+  headerName: string,
+  width: number,
+  renderCell?: (params: any) => any
+}
+
+export const userColumns: IColumn[] = [
   { field: "_id", headerName: "ID", width: 100 },
   {
     field: "user",
@@ -35,31 +42,31 @@ export const userColumns = [
   },
 ];
 
-export const reservationColumns = [
+export const reservationColumns: IColumn[] = [
   { field: "_id", headerName: "ID", width: 250 },
   {
-    field: "name",
-    headerName: "Name",
+    field: "date",
+    headerName: "Date",
     width: 150,
   },
   {
-    field: "type",
-    headerName: "Type",
+    field: "time",
+    headerName: "Time",
     width: 100,
   },
   {
-    field: "title",
-    headerName: "Title",
+    field: "guestsNumber",
+    headerName: "Number of Persons",
     width: 230,
   },
   {
-    field: "city",
-    headerName: "City",
+    field: "client",
+    headerName: "Client",
     width: 100,
   },
 ];
 
-export const menuColumns = [
+export const menuColumns: IColumn[] = [
   { field: "_id", headerName: "ID", width: 70 },
   {
     field: "title",
@@ -67,7 +74,7 @@ export const menuColumns = [
     width: 230,
   },
   {
-    field: "desc",
+    field: "description",
     headerName: "Description",
     width: 200,
   },
@@ -75,10 +82,5 @@ export const menuColumns = [
     field: "price",
     headerName: "Price",
     width: 100,
-  },
-  {
-    field: "maxPeople",
-    headerName: "Max People",
-    width: 100,
-  },
+  }
 ];

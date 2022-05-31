@@ -1,7 +1,7 @@
 import Home from "./pages/home/Home";
-// import Login from "./pages/login/Login";
-// import List from "./pages/list/List";
-// import Single from "./pages/single/Single";
+import Login from "./pages/login/Login";
+import List from "./pages/list/List";
+import Single from "./pages/single/Single";
 // import New from "./pages/new/New";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { menuInputs, userInputs } from "./formSource";
@@ -10,21 +10,19 @@ import { ReactNode, useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/AuthContext";
 import { userColumns, reservationColumns, menuColumns } from "./datatablesource"
-// import NewRoom from "./pages/newMenu/NewMenu";
+import NewMenu from "./pages/newMenu/NewMenu"
 
 function App() {
   const { darkMode } = useContext(DarkModeContext)
 
-  const ProtectedRoute = ({ children }: { children: ReactNode }) => {
+  const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
     const { user } = useContext(AuthContext)
 
     if (!user) {
       return <Navigate to="/login" />
     }
 
-    return (
-      { children }
-    )
+    return children
   }
 
   return (
@@ -36,18 +34,18 @@ function App() {
             <Route
               index
               element={
-                <ProtectedRoute>
+                // <ProtectedRoute>
                   <Home />
-                </ProtectedRoute>
+                // </ProtectedRoute>
               }
             />
             <Route path="users">
               <Route
                 index
                 element={
-                  <ProtectedRoute>
+                  // <ProtectedRoute>
                     <List columns={userColumns} />
-                  </ProtectedRoute>
+                  // </ProtectedRoute>
                 }
               />
               {/* <Route
@@ -69,24 +67,24 @@ function App() {
               <Route
                 index
                 element={
-                  <ProtectedRoute>
+                  // <ProtectedRoute>
                     <List columns={reservationColumns} />
-                  </ProtectedRoute>
+                  // </ProtectedRoute>
                 }
               />
 
-              {/* <Route
-                path=":menuId"
+              <Route
+                path=":reservationId"
                 element={
                   <ProtectedRoute>
                     <Single />
                   </ProtectedRoute>
                 }
-              /> */}
+              />
 
             </Route>
             
-            {/* <Route path="menus">
+            <Route path="menus">
               <Route
                 index
                 element={
@@ -111,7 +109,7 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-            </Route> */}
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>

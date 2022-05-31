@@ -1,9 +1,13 @@
 import { createContext, useEffect, useReducer, Dispatch } from "react";
 
+interface IError {
+  message: string
+}
+
 interface InitialState {
   user: string | null,
   loading: boolean,
-  error: object | null,
+  error: IError | null,
   dispatch?: Dispatch<{type: any, payload: any}>
 }
 
