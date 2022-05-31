@@ -92,7 +92,7 @@ function App() {
                     <List columns={menuColumns} />
                   // {/* </ProtectedRoute> */}
                 }
-              />
+              /> 
               <Route
                 path=":menuId"
                 element={

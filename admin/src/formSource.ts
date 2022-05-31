@@ -27,60 +27,53 @@ export const userInputs = [
     id: "phone",
     label: "Phone",
     type: "text",
-    placeholder: "+1 234 567 89",
+    placeholder: "+1 234 567 89"
   },
   {
     id: "password",
     label: "Password",
     type: "password",
   },
-];
+]
 
 export const menuInputs = [
   {
     id: 1,
     label: "Title",
     type: "text",
-    placeholder: "Apple Macbook Pro",
+    placeholder: "Title of your menu",
   },
   {
     id: 2,
     label: "Description",
     type: "text",
-    placeholder: "Description",
+    placeholder: "Description of your menu",
   },
   {
     id: 3,
     label: "Category",
     type: "text",
-    placeholder: "Computers",
+    placeholder: "Mains",
   },
   {
     id: 4,
     label: "Price",
     type: "text",
     placeholder: "100",
-  },
-  {
-    id: 5,
-    label: "Stock",
-    type: "text",
-    placeholder: "in stock",
-  },
-];
-
+  }
+]
 
 export const chefInputs = [
   {
     id: "title",
     label: "Title",
     type: "text",
-    placeholder: "2 bed room",
+    placeholder: "Chef's name here",
   },
   {
     id: "desc",
     label: "Description",
     type: "text",
-    placeholder: "King size bed, 1 bathroom",
+    placeholder: "Chef's description here"
   }
-];
+]
