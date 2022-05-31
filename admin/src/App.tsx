@@ -88,9 +88,9 @@ function App() {
               <Route
                 index
                 element={
-                  <ProtectedRoute>
+                  // <ProtectedRoute>
                     <List columns={menuColumns} />
-                  </ProtectedRoute>
+                  // {/* </ProtectedRoute> */}
                 }
               />
               <Route
@@ -104,9 +104,9 @@ function App() {
               <Route
                 path="new"
                 element={
-                  <ProtectedRoute>
+                  // <ProtectedRoute>
                     <NewMenu  />
-                  </ProtectedRoute>
+                  // </ProtectedRoute>
                 }
               />
             </Route>
