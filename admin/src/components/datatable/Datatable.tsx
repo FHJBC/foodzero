@@ -7,19 +7,19 @@ import axios from "axios";
 import { IColumn } from "../../datatablesource";
 
 const Datatable = ({columns}: {columns: IColumn[]}) => {
-  const location = useLocation();
-  const path = location.pathname.split("/")[1];
-  const [list, setList] = useState<readonly any[]>([]);
-  const { data } = useFetch(`/${path}`);
+  const location = useLocation()
+  const path = location.pathname.split("/")[1]
+  const [list, setList] = useState<readonly any[]>([])
+  const { data } = useFetch(`/${path}`)
 
   useEffect(() => {
-    setList(data);
-  }, [data]);
+    setList(data)
+  }, [data])
 
   const handleDelete = async (id: string) => {
     try {
-      await axios.delete(`/${path}/${id}`);
-      setList(list?.filter((item) => item._id !== id));
+      await axios.delete(`/${path}/${id}`)
+      setList(list?.filter((item) => item._id !== id))
     } catch (err) {}
   };
 
@@ -63,7 +63,7 @@ const Datatable = ({columns}: {columns: IColumn[]}) => {
         getRowId={(row) => row._id}
       />
     </div>
-  );
-};
+  )
+}
 
-export default Datatable;
+export default Datatable

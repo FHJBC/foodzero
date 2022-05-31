@@ -16,17 +16,7 @@ const NewHotel = () => {
 
   const handleChange = (e: any) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }))
-  };
-
-//   const handleSelect = (e) => {
-//     const value = Array.from(
-//       e.target.selectedOptions,
-//       (option) => option.value
-//     );
-//     setRooms(value);
-//   };
-  
-//   console.log(files)
+  }
 
   const handleClick = async (e: any) => {
     e.preventDefault()
@@ -106,7 +96,7 @@ const NewHotel = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NewHotel;
+export default NewHotel
