@@ -4,13 +4,14 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: #233000;
 }
 
-/* form {
+.register__form {
     background-color: white;
     padding: 0px 60px;
     border-radius: 10px;
-} */
+}
 
 .register__title {
     color: rgb(77, 1, 77);

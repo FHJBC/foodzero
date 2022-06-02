@@ -1,21 +1,45 @@
 import './register.css'
 import FormInput from './formInput/FormInput'
-import { useState } from 'react'
+import React, { ReactElement, useState } from 'react'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+
+interface InputAttribute {
+  id: number,
+  name: string,
+  type: string,
+  placeholder: string,
+  errorMessage: string,
+  label: string,
+  pattern?: string,
+  required?: true
+}
+
+interface UserInfo {
+  firstName: string,
+  lastName: string,
+  email: string,
+  phone: string,
+  password: string,
+  confirmPassword: string
+}
 
 const Register = () => {
 
-  const [values, setValues] = useState(
+  const navigate = useNavigate()
+
+  const [values, setValues] = useState<UserInfo>(
     {
-      firstName: "",
-      lastName: "",
-      email: "",
-      phone: "",
+      firstName: "Bernard",
+      lastName: "Marondry",
+      email: "jeanbosco@gmail.com",
+      phone: "0348500510",
       password: "",
       confirmPassword: ""
     }
   )
 
-  const inputs = [
+  const inputAttributes: InputAttribute[] = [
     {
       id: 1,
       name: "firstName",
@@ -74,28 +98,60 @@ const Register = () => {
     }
   ]
 
-  const handleSubmit = (e: any) => {
+
+  const getValue = (keyName: string, array: any = []): string => {
+    return array[keyName]
+  }
+  
+
+  const handleSubmit = async (e: any) => {
     e.preventDefault()
-    const data = new FormData(e.target)
-    console.log(Object.fromEntries(data.entries()));
+    // const data = new FormData(e.target)
+    // console.log(Object.fromEntries(data.entries()));
+
+    // console.log(values);
+
+    try {
+      const res = await axios.post('/auth/register', values)
+      setValues(
+        {
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          password: "",
+          confirmPassword: ""
+        }
+      )
+
+      navigate("/menus")
+    } catch (error) {
+      console.log(error)
+    }
+    
   }
 
   const handleChange = (e: any) => {
-    setValues({ ...values, [e.target.name]: e.targer.value })
+    setValues({ ...values, [e.target.name]: e.target.value })
   }
+
+  const inputs: ReactElement[] = []
+
+  inputAttributes.forEach((input) => {
+        inputs.push(<FormInput key={input.id} {...input} value={getValue(input.name, values)} onChange={handleChange} />)
+  })
+
 
   return (
     <div className="register">
+      <form className="register__form" onSubmit={handleSubmit}>
       <h1 className="register__title">Register</h1>
-      <form onSubmit={handleSubmit}>
-        <>
+        <React.Fragment>
           {
-            inputs.map((input) => { 
-                <FormInput focused="" key={input.id} {...input} value={input.name} onChange={handleChange} />
-            })
+            inputs
           }
-          <button className="register__btn">Submit</button>
-        </>
+        </React.Fragment>
+        <button className="register__btn">Submit</button>
       </form>
     </div>
   )

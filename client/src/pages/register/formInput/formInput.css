@@ -27,7 +27,7 @@
     border: 1px solid red;
 }
 
-.formInput > input:invalid[focused="true"] ~ .formInput > span {
+.formInput > input:invalid[focused="true"] ~ span {
     display: block;
 }
 

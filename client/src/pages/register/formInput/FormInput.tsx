@@ -7,12 +7,11 @@ interface IProps {
     name: string,
     errorMessage: string,
     value: string,
-    onChange: any,
-    focused: boolean | string
+    onChange: any
 }
 
 const FormInput = (props: IProps) => {
-    const { id, label, errorMessage, onChange, ...inputProps } = props
+    const { id, label, value, errorMessage, onChange, ...inputProps } = props
 
     const [focused, setFocused] = useState(false)
 
@@ -29,6 +28,7 @@ const FormInput = (props: IProps) => {
             onBlur={handleFocus} 
             onFocus={() => inputProps.name === "confirmPassword" && setFocused(true)}
             focused={focused.toString()} 
+            value={value}
         />
         <span>{errorMessage}</span>
     </div>

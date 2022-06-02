@@ -3,6 +3,7 @@ import { useContext, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../../context/AuthContext"
 import "./login.css"
+import "../register/formInput/formInput.css"
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -40,26 +41,35 @@ const Login = () => {
 
   return (
     <div className="login">
-      <div className="login__container">
-        <input
-          id="email"
-          type="text"
-          placeholder="Your Email Address"
-          onChange={handleChange}
-          className="login__input"
-        />
-        <input
-          id="password"
-          type="password"
-          placeholder="Your Password"
-          onChange={handleChange}
-          className="login__input"
-        />
+      <form className="login__form">
+      <h1 className="login__title">Login</h1>
+        
+        <div className="formInput">
+          <label>E-mail</label>
+          <input
+            id="email"
+            type="email"
+            placeholder="Your Email Address"
+            onChange={handleChange}
+            className="login__input"
+          />
+          {error && <span>{error.message}</span>}
+        </div>
+        <div className="formInput">
+            <label>Password</label>
+            <input
+              id="password"
+              type="password"
+              placeholder="Your Password"
+              onChange={handleChange}
+              className="login__input"
+            />
+            {error && <span>{error.message}</span>}
+        </div>
         <button disabled={loading} onClick={handleClick} className="login__button">
-          Login
+          Submit
         </button>
-        {/* {error && <span>{error.message}</span>} */}
-      </div>
+      </form>
     </div>
   );
 };
