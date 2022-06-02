@@ -87,14 +87,16 @@ const Register = () => {
   return (
     <div className="register">
       <h1 className="register__title">Register</h1>
-      {/* <form onSubmit={handleSubmit}> */}
-        {
-        // inputs.map((input) => { 
-            // <FormInput key={input.id} {...input} value={values[input.name]} onChange={handleChange} />
-        //  })
-        }
-        <button className="register__btn">Submit</button>
-      {/* </form> */}
+      <form onSubmit={handleSubmit}>
+        <>
+          {
+            inputs.map((input) => { 
+                <FormInput focused="" key={input.id} {...input} value={input.name} onChange={handleChange} />
+            })
+          }
+          <button className="register__btn">Submit</button>
+        </>
+      </form>
     </div>
   )
 }
