@@ -1,4 +1,3 @@
-import { IUser } from './../models/User'
 import { Request, Response, NextFunction } from 'express'
 import jwt from "jsonwebtoken"
 import { createError } from '../utils/error'
@@ -48,6 +47,7 @@ export const verifyUser = (req: Request, res: Response, next: NextFunction) => {
 
 export const verifyAdmin = (req: Request, res: Response, next: NextFunction) => {
   verifyToken(req, res, next, () => {
+    
     const user = res.locals.user
 
     if (user.isAdmin) {

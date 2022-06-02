@@ -1,7 +1,7 @@
 import bcrypt from "bcryptjs"
 import config from "config"
 import { Request, Response, NextFunction } from "express"
-import { User } from "../models/User"
+import { User } from "../models/user.model"
 import { createError } from "../utils/error"
 import { signJwt } from "../utils/jwt.utils"
 
@@ -34,11 +34,12 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
     let isPasswordCorrect: boolean = false
 
     if (user.password) {
-      isPasswordCorrect = await bcrypt.compare(
-        req.body.password,
-        user.password
-      )
-      }
+      // isPasswordCorrect = await bcrypt.compare(
+      //   req.body.password,
+      //   user.password
+      // )
+      isPasswordCorrect = await user.comparePassword(req.body.password)
+    }
 
     if (!isPasswordCorrect)
       return next(createError(400, "Wrong password or email!"))
@@ -50,6 +51,7 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
   )
 
     const { password, isAdmin, ...otherDetails } = user._doc
+
     res
       .cookie("access_token", accessToken, {
         httpOnly: true,

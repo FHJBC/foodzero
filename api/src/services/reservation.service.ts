@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express'
-import { Reservation, IReservation } from './../models/Reservation'
+import { Reservation, IReservation } from '../models/reservation.model'
 import { omit } from "lodash"
 import { FilterQuery, FlattenMaps, Model } from "mongoose"
 
@@ -34,6 +34,7 @@ import { FilterQuery, FlattenMaps, Model } from "mongoose"
 // }
 
 export const createReservation = async (req: Request, res: Response, next: NextFunction) => {
+  
   const userId = res.locals.user._id
 
   const reservation = req.body

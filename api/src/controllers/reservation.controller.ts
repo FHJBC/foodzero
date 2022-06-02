@@ -16,8 +16,6 @@ export async function createReservationHandler(
   res: Response,
   next: NextFunction
 ) {
-  // const reservation = await createReservation(req, res, next)
-  // return res.send(reservation)
   await createReservation(req, res, next)
 }
 
@@ -26,15 +24,9 @@ export async function getReservationHandler(
   res: Response,
   next: NextFunction
 ) {
-  // const reservationId = req.params.reservationId;
-  // const reservation = await getReservation({ reservationId });
+
   await getReservation(req, res, next)
 
-  // if (!reservation) {
-  //   return res.sendStatus(404);
-  // }
-
-  // return res.send(reservation);
 }
 
 export async function getReservationsHandler(
@@ -42,15 +34,9 @@ export async function getReservationsHandler(
   res: Response,
   next: NextFunction
 ) {
-  // const reservationId = req.params.reservationId;
-  // const reservation = await getReservation({ reservationId });
+
   await getReservations(req, res, next)
 
-  // if (!reservation) {
-  //   return res.sendStatus(404);
-  // }
-
-  // return res.send(reservation);
 }
 
 export async function updateReservationHandler(
