@@ -30,10 +30,10 @@ const Register = () => {
 
   const [values, setValues] = useState<UserInfo>(
     {
-      firstName: "Bernard",
-      lastName: "Marondry",
-      email: "jeanbosco@gmail.com",
-      phone: "0348500510",
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
       password: "",
       confirmPassword: ""
     }
