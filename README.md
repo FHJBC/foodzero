@@ -17,8 +17,7 @@
 After running *npm install --legacy-peer-deps* for the *client* project, add a property called **focused?: string | boolean | undefined;** to **interface InputHTMLAttributes<T> extends HTMLAttributes<T>** of the **namespace React** which is in **client/node_modules/@types/react/index.d.ts**
 
 ```bash
-    cd foodzero
-    cd admin
+    cd foodzero/admin
     npm install --legacy-peer-deps
     npm run dev
 ```
