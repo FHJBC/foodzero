@@ -12,14 +12,16 @@
 ```bash
     cd foodzero
     cd client
-    npm install
+    npm install --legacy-peer-deps
     npm run dev
 ```
+
+After running *npm install --legacy-peer-deps*, add a property called **focused?: string | boolean | undefined;** to *interface InputHTMLAttributes<T> extends HTMLAttributes<T>* which is in *namespace React* in *client/node_modules/@types/react/index.d.ts*
 
 ```bash
     cd foodzero
     cd admin
-    npm install
+    npm install --legacy-peer-deps
     npm run dev
 ```
 
