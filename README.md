@@ -1,8 +1,8 @@
-1. Cloner le projet
+1. Clone the project locally in your machine
 ```bash
     git clone https://github.com/FHJBC/foodzero.git
 ```
-2. Installer les dépendances
+2. Install the project's dependencies
 ```bash
     cd foodzero
     cd api
@@ -16,7 +16,7 @@
     npm run dev
 ```
 
-After running *npm install --legacy-peer-deps*, add a property called **focused?: string | boolean | undefined;** to **interface InputHTMLAttributes<T> extends HTMLAttributes<T>** which is in **namespace React** inside **client/node_modules/@types/react/index.d.ts**
+After running *npm install --legacy-peer-deps* for the *client* project, add a property called **focused?: string | boolean | undefined;** to **interface InputHTMLAttributes<T> extends HTMLAttributes<T>** which is in **namespace React** inside **client/node_modules/@types/react/index.d.ts**
 
 ```bash
     cd foodzero
