@@ -1,14 +1,14 @@
-import { ReactNode, useContext } from 'react';
+import { ReactNode, useContext } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './pages/home/Home'
 import { AuthContext } from "./context/AuthContext"
-import Menu from './pages/menu/Menu';
-import About from './pages/about/About';
-import Contact from './pages/contact/Contact';
-import Login from './pages/login/Login';
-import Register from './pages/register/Register';
-// import { About, Contact, Menu } from './pages';
+import Menu from './pages/menu/Menu'
+import About from './pages/about/About'
+import Contact from './pages/contact/Contact'
+import Login from './pages/login/Login'
+import Register from './pages/register/Register'
+// import { About, Contact, Menu } from './pages'
 
 function App() {
 
