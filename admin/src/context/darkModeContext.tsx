@@ -13,7 +13,7 @@ const INITIAL_STATE: InitialState = {
 export const DarkModeContext = createContext(INITIAL_STATE)
 
 export const DarkModeContextProvider = ({ children }: { children: ReactNode }) => {
-  const [state, dispatch] = useReducer(DarkModeReducer, INITIAL_STATE);
+  const [state, dispatch] = useReducer(DarkModeReducer, INITIAL_STATE)
 
   return (
     <DarkModeContext.Provider value={{ darkMode: state.darkMode, dispatch }}>
