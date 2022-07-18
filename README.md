@@ -16,7 +16,7 @@
     npm run dev
 ```
 
-After running *npm install --legacy-peer-deps*, add a property called **focused?: string | boolean | undefined;** to *interface InputHTMLAttributes<T> extends HTMLAttributes<T>* which is in *namespace React* in *client/node_modules/@types/react/index.d.ts*
+After running *npm install --legacy-peer-deps*, add a property called **focused?: string | boolean | undefined;** to **interface InputHTMLAttributes<T> extends HTMLAttributes<T>** which is in **namespace React** inside **client/node_modules/@types/react/index.d.ts__**
 
 ```bash
     cd foodzero
@@ -45,4 +45,4 @@ After running *npm install --legacy-peer-deps*, add a property called **focused?
 10. Copy this URL and paste it as the value of **dbUri** property inside the *api/config/default.ts* file 
 11. Still on https://cloud.mongodb.com, under the **SECURITY** section, click on **Network Access** and put **0.0.0.0** in the **IP Address**
 
-Make sure that you have the *nodemon* package installed 
+Make sure that you have the *nodemon* package installed as well
