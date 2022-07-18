@@ -1,14 +1,14 @@
-import Home from "./pages/home/Home";
-import Login from "./pages/login/Login";
-import List from "./pages/list/List";
-import Single from "./pages/single/Single";
-// import New from "./pages/new/New";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { menuInputs, userInputs } from "./formSource";
-import "./style/dark.scss";
-import { ReactNode, useContext } from "react";
-import { DarkModeContext } from "./context/darkModeContext";
-import { AuthContext } from "./context/AuthContext";
+import Home from "./pages/home/Home"
+import Login from "./pages/login/Login"
+import List from "./pages/list/List"
+import Single from "./pages/single/Single"
+// import New from "./pages/new/New"
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import { menuInputs, userInputs } from "./formSource"
+import "./style/dark.scss"
+import { useContext } from "react"
+import { DarkModeContext } from "./context/darkModeContext"
+import { AuthContext } from "./context/AuthContext"
 import { userColumns, reservationColumns, menuColumns } from "./datatablesource"
 import NewMenu from "./pages/newMenu/NewMenu"
 
@@ -34,28 +34,28 @@ function App() {
             <Route
               index
               element={
-                // <ProtectedRoute>
+                <ProtectedRoute>
                   <Home />
-                // </ProtectedRoute>
+                </ProtectedRoute>
               }
             />
             <Route path="users">
               <Route
                 index
                 element={
-                  // <ProtectedRoute>
+                  <ProtectedRoute>
                     <List columns={userColumns} />
-                  // </ProtectedRoute>
+                  </ProtectedRoute>
                 }
               />
-              {/* <Route
+              <Route
                 path=":userId"
                 element={
                   <ProtectedRoute>
                     <Single />
                   </ProtectedRoute>
                 }
-              /> */}
+              />
               {/* <Route
                 path="new"
                 element={
@@ -67,9 +67,9 @@ function App() {
               <Route
                 index
                 element={
-                  // <ProtectedRoute>
+                  <ProtectedRoute>
                     <List columns={reservationColumns} />
-                  // </ProtectedRoute>
+                  </ProtectedRoute>
                 }
               />
 
@@ -88,9 +88,9 @@ function App() {
               <Route
                 index
                 element={
-                  // <ProtectedRoute>
+                  <ProtectedRoute>
                     <List columns={menuColumns} />
-                  // {/* </ProtectedRoute> */}
+                  </ProtectedRoute>
                 }
               /> 
               <Route
@@ -104,9 +104,9 @@ function App() {
               <Route
                 path="new"
                 element={
-                  // <ProtectedRoute>
+                  <ProtectedRoute>
                     <NewMenu  />
-                  // </ProtectedRoute>
+                  </ProtectedRoute>
                 }
               />
             </Route>
