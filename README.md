@@ -4,14 +4,12 @@
 ```
 2. Install the project's dependencies
 ```bash
-    cd foodzero
-    cd api
+    cd foodzero/api
     yarn install
     yarn start
 ```
 ```bash
-    cd foodzero
-    cd client
+    cd foodzero/client
     npm install --legacy-peer-deps
     npm run dev
 ```
