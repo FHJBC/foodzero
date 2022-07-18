@@ -22,10 +22,8 @@ After running *npm install --legacy-peer-deps* for the *client* project, add a p
     npm run dev
 ```
 
-# Pour la config de l'url de la base de données
-1. Créer un nouveau compte sur: [MongoDB Atlas](https://cloud.mongodb.com)
 
-## Create a new account on MongoDB Atlas: https://cloud.mongodb.com
+## Create a new account on [MongoDB Atlas](https://cloud.mongodb.com)
 1. Create a Project (Click on the **Create** button)
 2. Create New Cluster
 3. Shared
